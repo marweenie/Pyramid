@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GoodTile
   - BadTile
+  - DeathFloor
   layers:
   - Default
   - TransparentFX

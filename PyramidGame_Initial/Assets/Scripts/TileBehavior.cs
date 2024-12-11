@@ -29,7 +29,7 @@ public class TileBehavior : MonoBehaviour
         if (other.CompareTag("Player") && isBadTile)
         {
             // Trigger the game over when the player steps on a bad tile
-            gameManager.GameOver();
+            //gameManager.GameOver();
 
             // Start the falling process for the tile and player
             StartCoroutine(FallWithPlayer());
