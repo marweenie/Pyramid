@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: bbea2be9e16101d458cfc1a95c59dfac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameOverTMPText: {instanceID: 0}
+  - playerTransform: {fileID: 8009716708459912517, guid: 4957b5c7c66c33b45a5b72238d6aac85, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
