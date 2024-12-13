@@ -13,18 +13,29 @@ public class GameManager : MonoBehaviour
     public Transform playerTransform; // Reference to the player
     public Vector3 initialPlayerPosition; // Starting position for the player
 
+    public GameObject gameOverText; // Reference to the Game Over text object
+    public GameObject quitGameButton; // Reference to the Quit Game button object
+    public GameObject playGameAgainButton; // Reference to the Play Game Again button object
+
     private void Start()
     {
 
         // Store the player's initial position
         initialPlayerPosition = playerTransform.position;
+
+        gameOverText.SetActive(false); // Ensure Game Over text is initially hidden
+        quitGameButton.SetActive(false); // Ensure Quit Game button is initially hidden
+        playGameAgainButton.SetActive(false); // Ensure Play Game Again button is initially hidden
     }
 
     public void GameOver()
     {
         Debug.Log("Game Over!");
-        // Show the Game Over text too but code not done
- 
+
+        gameOverText.SetActive(true); // Show Game Over text
+        quitGameButton.SetActive(true); // Show Quit Game button
+        playGameAgainButton.SetActive(true); // Show Play Game Again button
+
     }
 
     private void RestartGame()
