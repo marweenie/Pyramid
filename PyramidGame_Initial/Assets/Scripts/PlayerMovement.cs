@@ -4,7 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float turnSpeed = 100f;
-    public float gravity = -1.81f;  // Gravity value
+    public float gravity = -21.81f;  // Gravity value
+    public float jumpHeight = 2f;   // Jump height
 
     private CharacterController controller;
     private Vector3 velocity; // Used to store the player's velocity
@@ -34,6 +35,13 @@ public class PlayerMovement : MonoBehaviour
         {
             // Reset vertical velocity when grounded
             velocity.y = -1f; // Slight downward force to ensure the player stays grounded
+
+            // Check for jump input
+            if (Input.GetButtonDown("Jump"))
+            {
+                // Apply jump force
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
         }
         else
         {

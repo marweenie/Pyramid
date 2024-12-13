@@ -5,7 +5,6 @@ public class TileBehavior : MonoBehaviour
 {
     public bool isBadTile = false; // true for bad tiles only!
     private Rigidbody tileRigidbody;
-    public GameManager gameManager;  // Reference to the GameManager script
     public PlayerMovement playerMovement; // Reference to the PlayerMovement script
     public float delayBeforeFall = 0.5f; // Time before player starts falling
 
@@ -17,20 +16,8 @@ public class TileBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameManager == null)
-        {
-            Debug.LogError("GameManager is not assigned!");
-        }
-        else
-        {
-            gameManager.GameOver();
-        }
-
         if (other.CompareTag("Player") && isBadTile)
         {
-            // Trigger the game over when the player steps on a bad tile
-            gameManager.GameOver();
-
             // Start the falling process for the tile and player
             StartCoroutine(FallWithPlayer());
         }
@@ -58,3 +45,4 @@ public class TileBehavior : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 }
+

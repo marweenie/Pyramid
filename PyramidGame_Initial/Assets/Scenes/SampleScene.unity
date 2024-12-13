@@ -2721,7 +2721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1001 &878726538
@@ -3054,7 +3053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1001 &991473130
@@ -3483,7 +3481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: 1138266369}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1001 &1073870435
@@ -3691,7 +3688,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1001 &1217530062
@@ -4039,7 +4035,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1001 &1394383851
@@ -4261,7 +4256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1 &1523567143 stripped
@@ -4282,7 +4276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1 &1549602309 stripped
@@ -4308,7 +4301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!114 &1551922069 stripped
@@ -5056,7 +5048,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!4 &1793007457 stripped
@@ -5254,7 +5245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadTile: 1
-  gameManager: {fileID: -7373736335252016524, guid: 7a2374df747ea0548ab95c5167f3f6b8, type: 3}
   playerMovement: {fileID: 0}
   delayBeforeFall: 0.5
 --- !u!1001 &2578320431614063939
