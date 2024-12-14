@@ -2,8 +2,11 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GameManager
+    - MainMenu
     - PitBehavior
+    - PlayGameAgain
     - PlayerMovement
+    - QuitManager
     - TileBehavior
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -62,7 +65,19 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu
+    methodName: StartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu
+    methodName: ExitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: QuitManager
+    methodName: Quit
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayGameAgain
+    methodName: RestartGame
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -96,25 +111,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1932}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2600}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 1936}
     - Class: 114
-      Script: {instanceID: 2964}
+      Script: {instanceID: 2604}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 5052}
+      Script: {instanceID: 2968}
     - Class: 114
-      Script: {instanceID: 5478}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 5610}
+      Script: {instanceID: 3500}
     - Class: 114
-      Script: {instanceID: 5768}
+      Script: {instanceID: 5056}
     - Class: 114
-      Script: {instanceID: 6088}
+      Script: {instanceID: 5482}
+    - Class: 114
+      Script: {instanceID: 5684}
+    - Class: 114
+      Script: {instanceID: 5774}
+    - Class: 114
+      Script: {instanceID: 6094}
+    - Class: 114
+      Script: {instanceID: 7238}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -126,6 +149,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -150,32 +175,34 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2184}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2600}
+      Script: {instanceID: 2188}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2604}
     - Class: 114
-      Script: {instanceID: 3108}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3982}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 4090}
+      Script: {instanceID: 3984}
     - Class: 114
-      Script: {instanceID: 4344}
+      Script: {instanceID: 4092}
     - Class: 114
-      Script: {instanceID: 5052}
+      Script: {instanceID: 4346}
     - Class: 114
-      Script: {instanceID: 5610}
+      Script: {instanceID: 5056}
     - Class: 114
-      Script: {instanceID: 5768}
+      Script: {instanceID: 5734}
     - Class: 114
-      Script: {instanceID: 6088}
+      Script: {instanceID: 5774}
     - Class: 114
-      Script: {instanceID: 33558}
+      Script: {instanceID: 6094}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -193,6 +220,18 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: d41ab9b5ea92474f9c0a6937a0607ce1
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 540882762544409cc4530e60db00e951
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
   - hash:
       serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
@@ -483,12 +522,6 @@ ScriptsOnlyBuild:
     className: UnityOnTransformParentChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: d41ab9b5ea92474f9c0a6937a0607ce1
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: ContentSizeFitter
-  - hash:
-      serializedVersion: 2
       Hash: c6369b4cc3be620d6c9300e920bc3d52
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -537,7 +570,7 @@ ScriptsOnlyBuild:
     className: UnityOnControllerColliderHitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4f64dec554350d3ae35489d7b83cab7c
+      Hash: f7cce6ec218f2ebc688be431406c01f1
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: TileBehavior
@@ -777,6 +810,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 351f275515398e10986dfe5b3946f666
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NewBehaviourScript
+  - hash:
+      serializedVersion: 2
       Hash: 47ee34eb8b6021efa0289dbbb17a5a85
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -885,7 +924,7 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
-      Hash: ce2f5fc871caf6f929f84172aaaff771
+      Hash: b1fc67c284fbafa0da22c470eb192a6a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -897,16 +936,16 @@ ScriptsOnlyBuild:
     className: Benchmark02
   - hash:
       serializedVersion: 2
-      Hash: 540882762544409cc4530e60db00e951
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: CanvasScaler
-  - hash:
-      serializedVersion: 2
       Hash: 4166580c620718548959a77fa7b43fc1
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: TextMeshSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: e6c7c3db84b3eacaa40df035b27168f6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: QuitManager
   - hash:
       serializedVersion: 2
       Hash: ef38c1407dba8c1f5d69f5db61a694fe
@@ -919,6 +958,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: fe4c75203a9743390fe41454f7d841d0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MainMenu
   - hash:
       serializedVersion: 2
       Hash: 9637dcdf3068a91dfe653e61bb82f13d
@@ -1135,6 +1180,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: c2a235bf582114f4b09969e3fe347902
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayGameAgain
   - hash:
       serializedVersion: 2
       Hash: 9a174471d4db2c0c6d3ac47d2f818db1
