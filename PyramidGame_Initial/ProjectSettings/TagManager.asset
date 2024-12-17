@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GoodTile
   - BadTile
+  - TreasureChest
   layers:
   - Default
   - TransparentFX

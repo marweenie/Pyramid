@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI; // Import the UI namespace
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,10 +10,18 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity; // Used to store the player's velocity
 
+    public Text winText; // Reference to the Text component for the win screen
+
     void Start()
     {
         // Get the CharacterController component
         controller = GetComponent<CharacterController>();
+
+        // Ensure the win text is initially inactive
+        if (winText != null)
+        {
+            winText.gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -67,6 +76,18 @@ public class PlayerMovement : MonoBehaviour
             // Wait 1 second before starting to fall
             Invoke("StartFalling", 3f);
         }
+        else if (hit.collider.CompareTag("TreasureChest"))
+        {
+            Debug.Log("You Win!");
+            ShowWinScreen(); // Show the win screen
+        }
+    }
+
+    private void ShowWinScreen()
+    {
+        if (winText != null)
+        {
+            winText.gameObject.SetActive(true); // Activate the win screen
+        }
     }
 }
-

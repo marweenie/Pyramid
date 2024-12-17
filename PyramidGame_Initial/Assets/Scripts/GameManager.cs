@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Transform playerTransform; // Reference to the player
     public Vector3 initialPlayerPosition; // Starting position for the player
 
+    public GameObject WinText;
     public GameObject gameOverText; // Reference to the Game Over text object
     public GameObject quitGameButton; // Reference to the Quit Game button object
     public GameObject playGameAgainButton; // Reference to the Play Game Again button object
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         // Store the player's initial position
         initialPlayerPosition = playerTransform.position;
 
+        WinText.SetActive(false);
         gameOverText.SetActive(false); // Ensure Game Over text is initially hidden
         quitGameButton.SetActive(false); // Ensure Quit Game button is initially hidden
         playGameAgainButton.SetActive(false); // Ensure Play Game Again button is initially hidden
@@ -38,6 +40,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Winner(){
+        Debug.Log("You Win");
+
+        WinText.SetActive(true);
+        quitGameButton.SetActive(true); // Show Quit Game button
+        playGameAgainButton.SetActive(true); // Show Play Game Again button
+    }
     private void RestartGame()
     {
 
