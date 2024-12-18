@@ -13,10 +13,12 @@ public class GameManager : MonoBehaviour
     public Transform playerTransform; // Reference to the player
     public Vector3 initialPlayerPosition; // Starting position for the player
 
-    public GameObject WinText;
+    public GameObject WinText; // Reference to the Win text object
     public GameObject gameOverText; // Reference to the Game Over text object
     public GameObject quitGameButton; // Reference to the Quit Game button object
     public GameObject playGameAgainButton; // Reference to the Play Game Again button object
+    public GameObject WinnerquitGameButton; // Reference to the Quit Game button object
+    public GameObject WinnerplayGameAgainButton; // Reference to the Play Game Again button object
 
     private void Start()
     {
@@ -24,10 +26,13 @@ public class GameManager : MonoBehaviour
         // Store the player's initial position
         initialPlayerPosition = playerTransform.position;
 
-        WinText.SetActive(false);
         gameOverText.SetActive(false); // Ensure Game Over text is initially hidden
         quitGameButton.SetActive(false); // Ensure Quit Game button is initially hidden
         playGameAgainButton.SetActive(false); // Ensure Play Game Again button is initially hidden
+
+        WinText.SetActive(false); // Ensure Win text is initially hidden
+        WinnerquitGameButton.SetActive(false); // Ensure Win Quit Game button is initially hidden
+        WinnerplayGameAgainButton.SetActive(false); // Ensure Win Play Game Again button is initially hidden
     }
 
     public void GameOver()
@@ -40,12 +45,13 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void Winner(){
-        Debug.Log("You Win");
+    public void Winner()
+    {
+        Debug.Log("You Win!");
 
-        WinText.SetActive(true);
-        quitGameButton.SetActive(true); // Show Quit Game button
-        playGameAgainButton.SetActive(true); // Show Play Game Again button
+        WinText.SetActive(true); // Show Win text
+        WinnerquitGameButton.SetActive(true); // Show Quit Game button
+        WinnerplayGameAgainButton.SetActive(true); // Show Play Game Again button
     }
     private void RestartGame()
     {
